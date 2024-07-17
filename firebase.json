@@ -1,0 +1,1 @@
+{"flutter":{"platforms":{"android":{"default":{"projectId":"my-netflix-firebase","appId":"1:88471427023:android:c8b738ca3e0b46832024ba","fileOutput":"android/app/google-services.json"}},"dart":{"lib/firebase_options.dart":{"projectId":"my-netflix-firebase","configurations":{"android":"1:88471427023:android:c8b738ca3e0b46832024ba"}}}}}}

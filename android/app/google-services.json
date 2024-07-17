@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "88471427023",
+    "project_id": "my-netflix-firebase",
+    "storage_bucket": "my-netflix-firebase.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:88471427023:android:c8b738ca3e0b46832024ba",
+        "android_client_info": {
+          "package_name": "com.haku.netflix_ui_app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDBBrsGK9Cpe_zjp9mNthMQ56Ewfv19l7g"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
