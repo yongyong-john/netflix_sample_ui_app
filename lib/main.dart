@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:netflix_ui_app/screen/home_screen.dart';
+import 'package:netflix_ui_app/screen/like_screen.dart';
+import 'package:netflix_ui_app/screen/search_screen.dart';
 import 'package:netflix_ui_app/widget/bottom_bar.dart';
 import 'package:firebase_core/firebase_core.dart';
 
@@ -48,17 +50,9 @@ class _MyAppState extends State<MyApp> {
           body: TabBarView(
             physics: const NeverScrollableScrollPhysics(),
             children: <Widget>[
-              const HomeScreen(),
-              Container(
-                child: const Center(
-                  child: Text('search'),
-                ),
-              ),
-              Container(
-                child: const Center(
-                  child: Text('save'),
-                ),
-              ),
+              HomeScreen(),
+              const SearchScreen(),
+              const LikeScreen(),
               Container(
                 child: const Center(
                   child: Text('more'),

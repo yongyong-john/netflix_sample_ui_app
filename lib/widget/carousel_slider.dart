@@ -35,6 +35,8 @@ class _CarouselSliderWidgetState extends State<CarouselSliderWidget> {
 
   @override
   Widget build(BuildContext context) {
+    movies = widget.movies;
+    likes = movies.map((movie) => movie.like).toList();
     return Container(
       child: Column(
         children: <Widget>[
@@ -67,8 +69,24 @@ class _CarouselSliderWidgetState extends State<CarouselSliderWidget> {
                   child: Column(
                     children: <Widget>[
                       likes[_currentPage]
-                          ? IconButton(onPressed: () {}, icon: const Icon(Icons.check))
-                          : IconButton(onPressed: () {}, icon: const Icon(Icons.add)),
+                          ? IconButton(
+                              onPressed: () {
+                                setState(() {
+                                  likes[_currentPage] = !likes[_currentPage];
+                                  movies[_currentPage].reference?.update({'like': likes[_currentPage]});
+                                });
+                              },
+                              icon: const Icon(Icons.check),
+                            )
+                          : IconButton(
+                              onPressed: () {
+                                setState(() {
+                                  likes[_currentPage] = !likes[_currentPage];
+                                  movies[_currentPage].reference?.update({'like': likes[_currentPage]});
+                                });
+                              },
+                              icon: const Icon(Icons.add),
+                            ),
                       const Text(
                         '내가 찜한 콘텐츠',
                         style: TextStyle(fontSize: 11),

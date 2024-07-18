@@ -5,26 +5,14 @@ import 'package:netflix_ui_app/widget/box_slider.dart';
 import 'package:netflix_ui_app/widget/carousel_slider.dart';
 import 'package:netflix_ui_app/widget/circle_slider.dart';
 
-class HomeScreen extends StatefulWidget {
-  const HomeScreen({super.key});
+class HomeScreen extends StatelessWidget {
+  HomeScreen({super.key});
 
-  @override
-  State<HomeScreen> createState() => _HomeScreenState();
-}
-
-class _HomeScreenState extends State<HomeScreen> {
-  FirebaseFirestore firestore = FirebaseFirestore.instance;
-  late Stream<QuerySnapshot> streamData;
-
-  @override
-  void initState() {
-    super.initState();
-    streamData = firestore.collection('movie').snapshots();
-  }
+  final FirebaseFirestore firestore = FirebaseFirestore.instance;
 
   Widget _fetchData(BuildContext context) {
     return StreamBuilder<QuerySnapshot>(
-      stream: FirebaseFirestore.instance.collection('movie').snapshots(),
+      stream: firestore.collection('movie').snapshots(),
       builder: (context, snapshot) {
         if (!snapshot.hasData) {
           return const Center(
